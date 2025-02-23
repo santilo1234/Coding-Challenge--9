@@ -44,6 +44,7 @@ getDetails() { //Includes the size of team
 calculateBonus() { //calculates 10% of annual salary as bonus
     return this.calculateAnnualSalary() * 0.1;
 }
+}
 
 const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 console.log(mgr1.getDetails());
@@ -51,7 +52,6 @@ console.log(mgr1.getDetails());
 
 console.log(mgr1.calculateBonus()); 
 // Expected output: 9600
-
 
 
 
