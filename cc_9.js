@@ -89,3 +89,22 @@ Company.prototype.CalculateTotalPayroll = function() { //Calculates total payrol
 console.log(company.calculateTotalPayroll()); 
 // Expected output: 165600 (assuming emp1 and mgr1 salaries)
 
+
+//Task 5
+
+Company.prototype.promoteToManager = function(employee, teamSize) { //finds manager in array and promotes employee to manager
+
+
+} 
+const index = this.employees.indexOf(employee);
+if (index !== -1) {
+    this.employees [index] = new Manager (employee.name, employee.id, employee.department, employee.salary, teamSize);
+
+
+}
+
+company.promoteToManager(emp1, 3);
+company.listEmployees();
+// Expected output: "Manager: Alice Johnson, ID: 101, Department: Sales, Salary: $5000, Team Size: 3"
+
+
