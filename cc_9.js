@@ -80,4 +80,12 @@ company.listEmployees();
 // "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
 
 
+//Task 4
+
+Company.prototype.CalculateTotalPayroll = function() { //Calculates total payroll of the company
+    return this.employee.reduce((total, emp) => total + emp.calculateAnnualSalary(), 0);
+}
+
+console.log(company.calculateTotalPayroll()); 
+// Expected output: 165600 (assuming emp1 and mgr1 salaries)
 
