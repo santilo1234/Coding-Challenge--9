@@ -22,7 +22,7 @@ class Employee {
 
 const emp1 = new Employee("Alice Johnson", 101, "Sales", 5000);
 console.log(emp1.getDetails()); 
-// Expected output: "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
+// Expected output: "Employee Name: Alice Johnson, ID: 101, Department: Sales, Salary: 5000"
 
 console.log(emp1.calculateAnnualSalary()); 
 // Expected output: 60000
@@ -48,7 +48,7 @@ calculateBonus() { //calculates 10% of annual salary as bonus
 
 const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 console.log(mgr1.getDetails());
-// Expected output: "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+// Expected output: "Manager: John Smith, ID: 201, Department: IT, Salary: 8000, Team Size: 5"
 
 console.log(mgr1.calculateBonus()); 
 // Expected output: 9600
@@ -82,7 +82,7 @@ company.listEmployees();
 
 //Task 4
 
-Company.prototype.CalculateTotalPayroll = function() { //Calculates total payroll of the company
+Company.prototype.calculateTotalPayroll = function() { //Calculates total payroll of the company
     return this.employee.reduce((total, emp) => total + emp.calculateAnnualSalary(), 0);
 }
 
@@ -93,14 +93,10 @@ console.log(company.calculateTotalPayroll());
 //Task 5
 
 Company.prototype.promoteToManager = function(employee, teamSize) { //finds manager in array and promotes employee to manager
-
-
-} 
-const index = this.employees.indexOf(employee);
-if (index !== -1) {
-    this.employees [index] = new Manager (employee.name, employee.id, employee.department, employee.salary, teamSize);
-
-
+    const index = this.employee.indexOf(employee);
+    if (index !== -1) {
+        this.employee[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+    }
 }
 
 company.promoteToManager(emp1, 3);
